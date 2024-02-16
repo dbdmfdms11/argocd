@@ -21,11 +21,16 @@ spec:
 
 apiVersion: v1
 kind: Service
-metadata:
+metadata: 
   name: nginx-svc
-spec:
-  selector:
-    page: svc
-  ports:
+spec: 
+  ports: 
+  - name: nginx
+    port: 80
+    targetPort: 80
+  selector: 
+    app: nginx
+  type: LoadBalancer
+
   - port: 80
 
